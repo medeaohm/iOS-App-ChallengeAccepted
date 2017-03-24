@@ -1,0 +1,10 @@
+{
+  "name": "challengeaccepted",
+  "description": "parse-server for ChallengeAccepted",
+  "scripts": {
+    "start": "parse-server config.json"
+  },
+  "dependencies": {
+    "parse-server": "^2.0.0"
+  }
+}

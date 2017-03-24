@@ -1,0 +1,7 @@
+{
+  "appId": "Fk3yJWWNkJtLIrOvl311kmvvfP5fdSyyFuv90PyQ",
+  "masterKey": "gsA0o0qx2GO4q59xpzD9tDcWxhlgpSDChhAtKxQb",
+  "appName": "ChallengeAccepted",
+  "cloud": "./cloud/main",
+  "databaseURI": "mongodb://127.0.0.1:27017/parse"
+}
