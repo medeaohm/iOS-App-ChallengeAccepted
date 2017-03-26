@@ -125,6 +125,9 @@
                                 <rect key="frame" x="122" y="446" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="RegisterAction:" destination="uoH-pe-3YS" eventType="touchDown" id="oe9-Ba-3G5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EyW-Nf-25x">
                                 <rect key="frame" x="47" y="332" width="281" height="30"/>
@@ -144,6 +147,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordField" destination="EyW-Nf-25x" id="dDv-GD-YJO"/>
+                        <outlet property="emailField" destination="m8I-N6-4im" id="elr-Xt-AqD"/>
+                        <outlet property="passwordField" destination="AUo-ph-9hG" id="Fz3-wh-b7x"/>
+                        <outlet property="usernameField" destination="KIK-fD-OfL" id="jS9-QG-x4w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDo-yJ-xJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
