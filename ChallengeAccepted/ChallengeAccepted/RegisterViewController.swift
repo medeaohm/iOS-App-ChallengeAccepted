@@ -25,35 +25,36 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func RegisterAction(_ sender: UIButton) {
-        var username = self.usernameField.text
-        var password = self.passwordField.text
-        var confirmPassword = self.confirmPasswordField.text
-        var email = self.emailField.text
-        var alert: UIAlertController
+        let username = self.usernameField.text
+        let password = self.passwordField.text
+        let confirmPassword = self.confirmPasswordField.text
+        let email = self.emailField.text
+        var alertValidation: UIAlertController
+        
         
         
         //validate username
         if (username?.characters.count)! < 3 {
-            alert = UIAlertController(title: "Error", message: "Username should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            alertValidation = UIAlertController(title: "Error", message: "Username should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertValidation, animated: true, completion: nil)
         }
         //validate email
         else if (email?.characters.count)! < 3 {
-            alert = UIAlertController(title: "Error", message: "Email should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            alertValidation = UIAlertController(title: "Error", message: "Email should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertValidation, animated: true, completion: nil)
         }
         //validate password
-        else if (email?.characters.count)! < 3 {
-            alert = UIAlertController(title: "Error", message: "Password should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        else if (password?.characters.count)! < 3 {
+            alertValidation = UIAlertController(title: "Error", message: "Password should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertValidation, animated: true, completion: nil)
         }
         else if (password != confirmPassword) {
-            alert = UIAlertController(title: "Error", message: "Password do not match", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            alertValidation = UIAlertController(title: "Error", message: "Password do not match", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertValidation, animated: true, completion: nil)
         }
         else{
             //run spinner to show the task is in progress
@@ -69,19 +70,21 @@ class RegisterViewController: UIViewController {
             newUser.signUpInBackground(block: { (success, error) in
                 spinner.stopAnimating()
                 
+                var alert: UIAlertController
+                
                 if((error) != nil) {
                     print("ERROR +++++++++++++++++++++ ", error, separator: " ")
-                    //alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
-                    //alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                    //self.present(alert, animated: true, completion: nil)
+                    alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 } else {
-                    //alert = UIAlertController(title: "Success", message: "Registered!", preferredStyle: UIAlertControllerStyle.alert)
-                    //alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                    //self.present(alert, animated: true, completion: nil)
+                    alert = UIAlertController(title: "Success", message: "Registered!", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                     
                     //redirect to Login
                     DispatchQueue.main.async {() -> Void in
-                        let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
+                        let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as UIViewController
                         self.present(viewController, animated: true, completion: nil)
                     }
                 }

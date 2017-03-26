@@ -31,4 +31,14 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func logOutAction(_ sender: Any) {
+        
+        PFUser.logOut();
+        
+        //redirect to Login
+        DispatchQueue.main.async {() -> Void in
+            let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as UIViewController
+            self.present(viewController, animated: true, completion: nil)
+        }
+    }
 }
