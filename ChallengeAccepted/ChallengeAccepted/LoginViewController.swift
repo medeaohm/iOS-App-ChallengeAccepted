@@ -54,9 +54,6 @@ class LoginViewController: UIViewController {
                 var alert: UIAlertController
                 
                 if (user) != nil {
-                    //alert = UIAlertController(title: "Success", message: "Logged in...", preferredStyle: UIAlertControllerStyle.alert)
-                    //alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                    //self.present(alert, animated: true, completion: nil)
                     
                     //redirect to Home
                     DispatchQueue.main.async {() -> Void in
