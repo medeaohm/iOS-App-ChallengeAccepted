@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0B3AC61E8B2A0F008C9876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0B3AC41E8B2A0F008C9876 /* Main.storyboard */; };
+		3F0B3AC81E8C3A72008C9876 /* AddChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B3AC71E8C3A71008C9876 /* AddChallengeViewController.swift */; };
 		3F4F29FD1E8463CF00D10E02 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F29FC1E8463CF00D10E02 /* Bolts.framework */; };
 		3F4F2A011E8469BE00D10E02 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F2A001E8469BD00D10E02 /* Parse.framework */; };
 		3FD43C741E844B8500304978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD43C731E844B8500304978 /* AppDelegate.swift */; };
-		3FD43C761E844B8500304978 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD43C751E844B8500304978 /* ViewController.swift */; };
-		3FD43C791E844B8600304978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD43C771E844B8600304978 /* Main.storyboard */; };
 		3FD43C7B1E844B8700304978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD43C7A1E844B8700304978 /* Assets.xcassets */; };
 		3FD43C7E1E844B8800304978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD43C7C1E844B8800304978 /* LaunchScreen.storyboard */; };
 		3FD987241E89AE7A00DD9A43 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD987231E89AE7A00DD9A43 /* Challenge.swift */; };
@@ -24,12 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0B3AC51E8B2A0F008C9876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ChallengeAccepted/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F0B3AC71E8C3A71008C9876 /* AddChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChallengeViewController.swift; sourceTree = "<group>"; };
 		3F4F29FC1E8463CF00D10E02 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = build/Debug/Bolts.framework; sourceTree = "<group>"; };
 		3F4F2A001E8469BD00D10E02 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse/Parse.framework"; sourceTree = "<group>"; };
 		3FD43C701E844B8300304978 /* ChallengeAccepted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeAccepted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD43C731E844B8500304978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FD43C751E844B8500304978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3FD43C781E844B8600304978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FD43C7A1E844B8700304978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FD43C7D1E844B8800304978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FD43C7F1E844B8800304978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,9 +90,8 @@
 			children = (
 				3FD987221E89ADED00DD9A43 /* Models */,
 				3FD43C731E844B8500304978 /* AppDelegate.swift */,
-				3FD43C751E844B8500304978 /* ViewController.swift */,
-				3FD43C771E844B8600304978 /* Main.storyboard */,
 				3FD43C7A1E844B8700304978 /* Assets.xcassets */,
+				3F0B3AC41E8B2A0F008C9876 /* Main.storyboard */,
 				3FD43C7C1E844B8800304978 /* LaunchScreen.storyboard */,
 				3FD43C7F1E844B8800304978 /* Info.plist */,
 				3FD987481E89C39900DD9A43 /* View Controllers */,
@@ -116,6 +115,7 @@
 				3FF768B51E84831A00951254 /* RegisterViewController.swift */,
 				3FD987451E89C31C00DD9A43 /* MasterChallengesTableViewController.swift */,
 				3FD987491E89C3DE00DD9A43 /* DetailChallengeViewController.swift */,
+				3F0B3AC71E8C3A71008C9876 /* AddChallengeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -192,9 +192,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0B3AC61E8B2A0F008C9876 /* Main.storyboard in Resources */,
 				3FD43C7E1E844B8800304978 /* LaunchScreen.storyboard in Resources */,
 				3FD43C7B1E844B8700304978 /* Assets.xcassets in Resources */,
-				3FD43C791E844B8600304978 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +258,8 @@
 				3FD987241E89AE7A00DD9A43 /* Challenge.swift in Sources */,
 				3FD9874A1E89C3DE00DD9A43 /* DetailChallengeViewController.swift in Sources */,
 				3FF768B41E8482DE00951254 /* LoginViewController.swift in Sources */,
-				3FD43C761E844B8500304978 /* ViewController.swift in Sources */,
 				3FD43C741E844B8500304978 /* AppDelegate.swift in Sources */,
+				3F0B3AC81E8C3A72008C9876 /* AddChallengeViewController.swift in Sources */,
 				3FF768B61E84831A00951254 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,12 +267,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3FD43C771E844B8600304978 /* Main.storyboard */ = {
+		3F0B3AC41E8B2A0F008C9876 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3FD43C781E844B8600304978 /* Base */,
+				3F0B3AC51E8B2A0F008C9876 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3FD43C7C1E844B8800304978 /* LaunchScreen.storyboard */ = {

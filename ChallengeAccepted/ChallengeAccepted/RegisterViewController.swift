@@ -78,9 +78,9 @@ class RegisterViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    alert = UIAlertController(title: "Success", message: "Registered!", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    //alert = UIAlertController(title: "Success", message: "Registered!", preferredStyle: UIAlertControllerStyle.alert)
+                    //alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    //self.present(alert, animated: true, completion: nil)
                     
                     //redirect to Login
                     DispatchQueue.main.async {() -> Void in

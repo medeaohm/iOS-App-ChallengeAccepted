@@ -17,27 +17,18 @@ class MasterChallengesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        
-        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailChallengeViewController
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+/*
         if (PFUser.current() == nil) {
             DispatchQueue.main.async {() -> Void in
                 let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
                 self.present(viewController, animated: true, completion: nil)
             }
         }
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
-        super.viewWillAppear(animated)
+ */
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+  
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,8 +49,8 @@ class MasterChallengesTableViewController: UITableViewController {
                 let object = objects[indexPath.row] as! NSDate
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailChallengeViewController
                 controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                //controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+                //controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -80,7 +71,7 @@ class MasterChallengesTableViewController: UITableViewController {
         cell.textLabel!.text = object.description
         return cell
     }
-    
+    /*
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
@@ -93,5 +84,15 @@ class MasterChallengesTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    */
+    @IBAction func logoutPressed(_ sender: Any) {
+        PFUser.logOut()
+        
+        //redirect to Login
+        DispatchQueue.main.async {() -> Void in
+            let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as UIViewController
+            self.present(viewController, animated: true, completion: nil)
+        }
     }
 }
