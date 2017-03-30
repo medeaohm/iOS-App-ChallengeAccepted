@@ -11,6 +11,14 @@ import Parse
 
 class AddChallengeViewController: UIViewController {
 
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var challengerTextField: UITextField!
+    @IBOutlet weak var winTextField: UITextField!
+    @IBOutlet weak var looseTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,14 +31,42 @@ class AddChallengeViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addLocationAction(_ sender: Any) {
     }
-    */
+    
+    @IBAction func saveChallenge(_ sender: Any) {
+        let title = self.titleTextField.text
+        let description = self.descriptionTextField.text
+        let challenger = self.challengerTextField.text
+        let win = self.winTextField.text
+        let loose = self.looseTextField.text
+        let status = "InProgress"
+        var alertValidation: UIAlertController
+        
+        var challenge = Challenge()
+        
+        challenge.title = title!
+        challenge.descriptionText = description!
+        challenge.challenger = challenger!
+        challenge.win = win!
+        challenge.loose = loose!
+        challenge.status = status
+        
 
+        challenge.saveInBackground(block: { (success, error) in
+            //spinner.stopAnimating()
+            
+            var alert: UIAlertController
+            
+            if((error) != nil) {
+                print("ERROR +++++++++++++++++++++ ", error, separator: " ")
+                alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.performSegue(withIdentifier: "returnToTableView", sender: nil)
+            }
+        })
+
+    }
 }

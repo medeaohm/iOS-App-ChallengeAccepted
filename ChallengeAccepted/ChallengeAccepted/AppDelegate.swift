@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        Challenge.registerSubclass()
+        
         let configuration = ParseClientConfiguration {
             $0.applicationId = "Fk3yJWWNkJtLIrOvl311kmvvfP5fdSyyFuv90PyQ"
             $0.clientKey = "gsA0o0qx2GO4q59xpzD9tDcWxhlgpSDChhAtKxQb"
