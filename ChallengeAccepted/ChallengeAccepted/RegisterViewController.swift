@@ -35,30 +35,30 @@ class RegisterViewController: UIViewController {
         
         //validate username
         if (username?.characters.count)! < 3 {
-            alertValidation = UIAlertController(title: "Error", message: "Username should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alertValidation = UIAlertController(title: "Invalid", message: "Username should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertValidation, animated: true, completion: nil)
         }
         //validate email
         else if (email?.characters.count)! < 3 {
-            alertValidation = UIAlertController(title: "Error", message: "Email should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alertValidation = UIAlertController(title: "Invalid", message: "Email should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertValidation, animated: true, completion: nil)
         }
         //validate password
         else if (password?.characters.count)! < 3 {
-            alertValidation = UIAlertController(title: "Error", message: "Password should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alertValidation = UIAlertController(title: "Invalid", message: "Password should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertValidation, animated: true, completion: nil)
         }
         else if (password != confirmPassword) {
-            alertValidation = UIAlertController(title: "Error", message: "Password do not match", preferredStyle: UIAlertControllerStyle.alert)
-            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alertValidation = UIAlertController(title: "Invalid", message: "Password do not match", preferredStyle: UIAlertControllerStyle.alert)
+            alertValidation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertValidation, animated: true, completion: nil)
         }
         else{
             //run spinner to show the task is in progress
-            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 100, y: 100, width: 450, height: 450))
             spinner.startAnimating()
             
             let newUser = PFUser()
@@ -78,15 +78,7 @@ class RegisterViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    //alert = UIAlertController(title: "Success", message: "Registered!", preferredStyle: UIAlertControllerStyle.alert)
-                    //alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    //self.present(alert, animated: true, completion: nil)
-                    
-                    //redirect to Login
-                    DispatchQueue.main.async {() -> Void in
-                        let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as UIViewController
-                        self.present(viewController, animated: true, completion: nil)
-                    }
+                    self.performSegue(withIdentifier: "userRegistered", sender: nil)
                 }
             })
         }

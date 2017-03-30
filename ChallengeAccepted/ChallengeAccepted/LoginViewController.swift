@@ -22,19 +22,11 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async(execute: { 
                 self.performSegue(withIdentifier: "loginPressed", sender: nil)
             })
-            //self.performSegue(withIdentifier: "loginPressed", sender: nil)
-            //redirect to Login
-            //DispatchQueue.main.async {() -> Void in
-            //    let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "MasterChallengesTable") as UIViewController
-            //   self.present(viewController, animated: true, completion: nil)
-            //}
         }
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func loginAction(_ sender: Any) {
@@ -63,14 +55,9 @@ class LoginViewController: UIViewController {
             PFUser.logInWithUsername(inBackground: username!, password: password!, block: { (user, error) in
                 
                 var alert: UIAlertController
-                /* TODO - Fix bug of when trying to log in with invalid data */
                 if (user) != nil {
                     self.performSegue(withIdentifier: "loginPressed", sender: nil)
-                    //redirect to Login
-                    //DispatchQueue.main.async {() -> Void in
-                    //    let viewController:UIViewController = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "MasterChallengesTable") as UIViewController
-                     //   self.present(viewController, animated: true, completion: nil)
-                    //}
+        
                     print("LoggedIn +++++++++++++++++++++ ")
                     print(user)
                     
