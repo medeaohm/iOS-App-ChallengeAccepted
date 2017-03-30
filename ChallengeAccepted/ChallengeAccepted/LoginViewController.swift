@@ -49,13 +49,13 @@ class LoginViewController: UIViewController {
         //validate username
         if (username?.characters.count)! < 3 {
             alertValidation = UIAlertController(title: "Invalid", message: "Username should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alertValidation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertValidation, animated: true, completion: nil)
         }
         //validate password
         else if (password?.characters.count)! < 3 {
             alertValidation = UIAlertController(title: "Invalid", message: "Password should contain at leat 3 symbols", preferredStyle: UIAlertControllerStyle.alert)
-            alertValidation.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alertValidation.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertValidation, animated: true, completion: nil)
         }
         else {
@@ -76,8 +76,8 @@ class LoginViewController: UIViewController {
                     
                 } else {
                     print("ERROR +++++++++++++++++++++ ", error, separator: " ")
-                    alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                    alert = UIAlertController(title: "Error", message: "Unable to connect.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             })

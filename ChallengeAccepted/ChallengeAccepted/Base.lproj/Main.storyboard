@@ -188,7 +188,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="eDQ-TN-nEN" eventType="touchDown" id="Oup-RR-4Qn"/>
-                                    <segue destination="VoF-fn-674" kind="show" identifier="loginPressed" id="eoo-07-VL0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktU-1x-HH0">
@@ -205,6 +204,7 @@
                     <connections>
                         <outlet property="passwordField" destination="TEm-Wo-x5g" id="Lso-sW-yie"/>
                         <outlet property="usernameField" destination="5kP-P5-lw2" id="NBa-PS-UQp"/>
+                        <segue destination="VoF-fn-674" kind="show" identifier="loginPressed" id="B7n-Ef-IPY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NuB-Lh-2Nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
