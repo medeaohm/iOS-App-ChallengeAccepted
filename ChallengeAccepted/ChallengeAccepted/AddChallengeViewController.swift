@@ -10,14 +10,12 @@ import UIKit
 import Parse
 
 class AddChallengeViewController: UIViewController {
-
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var challengerTextField: UITextField!
     @IBOutlet weak var winTextField: UITextField!
     @IBOutlet weak var looseTextField: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +28,11 @@ class AddChallengeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func addLocationAction(_ sender: Any) {
+    @IBAction func doubleTapLocaition(_ sender: UITapGestureRecognizer) {
+        sender.numberOfTapsRequired = 2
+        if (sender.numberOfTouches == 2) {
+            print("double tap success")
+        }
     }
     
     @IBAction func saveChallenge(_ sender: Any) {
@@ -41,9 +42,9 @@ class AddChallengeViewController: UIViewController {
         let win = self.winTextField.text
         let loose = self.looseTextField.text
         let status = "InProgress"
-        var alertValidation: UIAlertController
+        let alertValidation: UIAlertController
         
-        var challenge = Challenge()
+        let challenge = Challenge()
         
         challenge.title = title!
         challenge.descriptionText = description!
@@ -51,6 +52,7 @@ class AddChallengeViewController: UIViewController {
         challenge.win = win!
         challenge.loose = loose!
         challenge.status = status
+        challenge.user = PFUser.current()!
         
 
         challenge.saveInBackground(block: { (success, error) in
